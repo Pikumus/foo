@@ -2,7 +2,7 @@
   overflow: hidden;
   height: 100vh;
   @include flex-column;
-  padding: $padding-main;
+  padding: 20px 120px 0 120px;
   box-shadow: inset 0 130px 60px 0 rgba(0, 0, 0, 0.9);
   background:
     radial-gradient(circle at 10% 100%, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 20%, transparent 45%),
@@ -11,7 +11,7 @@
 
 
 
-  @include bp-media('xs') {
+  @include bp-media('lg', 'md', 'sm', 'xs') {
     padding: 16px;
     height: 100vh;
     background:
