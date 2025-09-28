@@ -112,10 +112,24 @@
       @include bp-media('lg', 'md', 'sm', 'xs') {
         font-size: $font-size-20;
       }
+
+      &_xl {
+        text-wrap: nowrap;
+        font-size: 56px;
+
+        @include bp-media('lg', 'md', 'sm', 'xs') {
+          font-size: $font-size-20;
+        }
+      }
     }
 
     &-sup {
+      top: -1.5em;
       font-size: $font-size-small;
+
+      @include bp-media('lg', 'md', 'sm', 'xs') {
+        top: -0.5em;
+      }
     }
 
     &-text {
