@@ -1,0 +1,40 @@
+.main {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: $gap-main;
+
+  &__content {
+    @include flex-column;
+    gap: $gap-main;
+    padding-bottom: 80px;
+
+    @include bp-media('lg', 'md', 'sm', 'xs') {
+     gap: 20px;
+      padding-bottom: 32px;
+    }
+  }
+
+  &__text {
+    max-width: 500px;
+    font-weight: 500;
+    line-height: 40px;
+    font-size: $font-size-large;
+
+    @include bp-media('lg', 'md', 'sm', 'xs') {
+      font-size: $font-size-20;
+      line-height: 24px;
+    }
+  }
+
+  &__actions {
+    padding-bottom: 32px;
+    display: flex;
+    gap: $gap-actions;
+
+    @include bp-media('lg', 'md', 'sm', 'xs') {
+      display: none;
+    }
+  }
+}

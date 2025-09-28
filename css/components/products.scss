@@ -1,0 +1,168 @@
+.products {
+  overflow: hidden;
+  color: $black;
+
+  &__header {
+    margin-bottom: 60px;
+  }
+
+  &__intro {
+    max-width: 704px;
+  }
+
+  &__title {
+    font-size: $font-size-big;
+    font-weight: 500;
+    margin-bottom: 24px;
+    line-height: 1.2;
+
+    @include bp-media('lg', 'md', 'sm', 'xs') {
+      font-size: $font-size-regular;
+    }
+  }
+
+  &__subtitle {
+    font-size: $font-size-regular;
+    font-weight: 400;
+    line-height: 1.4;
+    color: rgba($black, 0.8);
+
+    @include bp-media('lg', 'md', 'sm', 'xs') {
+      font-size: $font-size-mini;
+    }
+  }
+
+  &__content {
+
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+    gap: 33px;
+
+    @media (max-width: 1500px) {
+      grid-template-columns: repeat(2, 3fr);
+    }
+
+    @include bp-media('lg', 'md', 'sm', 'xs') {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__item:nth-child(1) {
+    grid-column: span 2;
+
+    @include bp-media('lg', 'md', 'sm', 'xs') {
+     grid-column: span 1;
+    }
+  }
+
+  &__item:nth-child(2) {
+    grid-column: span 1;
+  }
+
+  &__item {
+    display: flex;
+    background-color: $ivory;
+    border-radius: 24px;
+    padding: 32px 0 0 32px;
+    transition: transform 0.2s ease;
+
+
+    &:hover {
+      transform: translateY(-4px);
+    }
+
+    @include bp-media('lg', 'md', 'sm', 'xs') {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      padding: 0;
+      flex-direction: column-reverse;
+    }
+
+    &_column {
+      display: flex;
+      flex-direction: column;
+      background-color: $ivory;
+      border-radius: 24px;
+      padding: 32px 0 0 32px;
+      transition: transform 0.2s ease;
+
+      @include bp-media('lg', 'md', 'sm', 'xs') {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        padding: 0;
+        flex-direction: column-reverse;
+      }
+    }
+  }
+
+  &__card-info {
+    @include bp-media('lg', 'md', 'sm', 'xs') {
+      padding: 20px;
+      background-color: $white;
+      border-bottom-left-radius: 24px;
+      border-bottom-right-radius: 24px;
+    }
+  }
+
+  &__card-title {
+    font-weight: 500;
+    font-size: $font-size-regular;
+    padding-bottom: 8px;
+
+    @include bp-media('lg', 'md', 'sm', 'xs') {
+      font-size: $font-size-small;
+    }
+  }
+
+  &__card-subtitle {
+    max-width: 340px;
+    overflow: visible;
+    font-weight: 400;
+    line-height: 24px;
+    color: $brown;
+    opacity: 0.5;
+    font-size: $font-size-small;
+    padding-bottom: 16px;
+
+    @include bp-media('lg', 'md', 'sm', 'xs') {
+      text-align: left;
+      font-size: $font-size-mini;
+    }
+
+    &:last-of-type {
+      padding-bottom:  56px;
+    }
+  }
+
+
+  &__card-button {
+    height: 56px;
+    padding: 16px;
+    background: $primary-green;
+    border-radius: $border-radius-button
+  }
+
+  &__card-image {
+    border-radius: 24px;
+    overflow: hidden;
+    align-self: end;
+    mix-blend-mode: multiply;
+
+    @include bp-media('lg', 'md', 'sm', 'xs') {
+      max-width: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__card-gap {
+    display: block;
+    height: 16px;
+  }
+  .column {
+    flex-direction: column;
+    width: 336px;
+  }
+}

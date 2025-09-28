@@ -1,0 +1,46 @@
+@import 'base/variables';
+@import 'base/mixins';
+
+@import 'components/main-page';
+@import 'components/header';
+@import 'components/menu';
+@import 'components/main';
+@import 'components/buttons';
+@import 'components/about-company';
+@import 'components/products';
+@import 'components/technology';
+@import 'components/consult';
+@import 'components/footer';
+
+
+.section {
+  padding: 120px 120px 0 120px;
+
+  @include bp-media('lg', 'md', 'sm', 'xs') {
+    padding: 16px;
+  }
+}
+
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+}
+
+input {
+  background: none;
+  border: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  appearance: none;
+}
+
+.active {
+  color: $white;
+}

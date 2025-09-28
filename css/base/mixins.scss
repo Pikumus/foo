@@ -1,0 +1,67 @@
+@use "sass:map";
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin button-base {
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: $font-family;
+  color: $white;
+}
+
+@mixin button-primary {
+  @include button-base;
+  width: $button-width;
+  height: $button-height;
+  border-radius: $border-radius-button;
+  padding: 16px 40px;
+  font-size: $font-size-small;
+  font-weight: 500;
+  background-color: $primary-green;
+  gap: 10px;
+}
+
+@mixin button-slider {
+  @include button-base;
+  padding: 16px;
+  background-color: transparent;
+  border-radius: $border-radius-slider;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+}
+
+
+@mixin bp-media($bp...) {
+  @each $breakpoint in $bp {
+    @if map.has-key($breakpoints, $breakpoint) {
+      @media #{map.get($breakpoints, $breakpoint)} {
+        @content;
+      }
+    } @else {
+      @warn "Брейкпоинт #{$breakpoint} не найден в $breakpoints.";
+    }
+  }
+}
+
+$breakpoints: (
+  "xl": "(min-width: 1200px)",
+  "lg": "(min-width: 992px) and (max-width: 1199.98px)",
+  "md": "(min-width: 768px) and (max-width: 991.98px)",
+  "sm": "(min-width: 576px) and (max-width: 767.98px)",
+  "xs": "(max-width: 575.98px)"
+);

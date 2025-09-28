@@ -1,0 +1,9 @@
+.main {
+  &__button {
+    @include button-primary;
+  }
+
+  &__slider-button {
+    @include button-slider;
+  }
+}

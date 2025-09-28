@@ -1,0 +1,41 @@
+.menu {
+  display: flex;
+  align-items: center;
+
+  &__text {
+    font-weight: 500;
+  }
+
+  &__list {
+    padding: 0 70px 0 131px;
+    display: flex;
+    gap: $gap-menu;
+  }
+
+  &__item {
+    font-weight: 400;
+    font-size: $font-size-small;
+    line-height: 100%;
+    opacity: 0.5;
+  }
+
+  &__search {
+    color: $white;
+    opacity: 0.5;
+  }
+}
+
+.sub-menu {
+  display: flex;
+
+  &__list {
+    display: flex;
+    gap: $gap-submenu;
+  }
+
+  &__item {
+    font-weight: 400;
+    font-size: $font-size-medium;
+    line-height: 100%;
+  }
+}
